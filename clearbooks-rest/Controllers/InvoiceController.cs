@@ -60,14 +60,41 @@ namespace clearbooks_rest.Controllers
         {
             return new string[] { "value1", "value2" };
         }
-
-        // GET: api/Invoice/5
-        public string Get(int id)
-        {
-            return "value";
-        }
         */
+        // GET: api/Invoice/5
+        [Route("api/getInvoice")]
+        public ClearBooksService.Invoice Get(int invoiceID, string ledger)
+        {
+            using (var cb = NewClearBooksClient())
+            {
+                var auth = new ClearBooksService.authenticate();
+
+                auth.apiKey = GetAPIKeyHeader();
+
+                var query = new ClearBooksService.InvoiceQuery();
+
+                query.ledger = ledger;
+
+                query.id = new int[1];
+
+                query.id[0] = invoiceID;
+
+                var response  = cb.listInvoices(auth, query);
+
+                return response[0];
+
+            }
+        }
+
         // POST: api/createInvoice
+        /// <summary>
+        /// Multi-currency field:
+        /// 3 = USD
+        /// 2 = EUR
+        /// 1 = GBP
+        /// </summary>
+        /// <param name="invoice"></param>
+        /// <returns></returns>
         [Route("api/createInvoice")]
         public ClearBooksService.InvoiceReturn Post([FromBody]ClearBooksService.Invoice invoice)
         {

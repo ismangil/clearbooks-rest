@@ -245,6 +245,7 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="clearbooks-rest.licenseheader" />
+    <None Include="Properties\PublishProfiles\clearbooks-rest - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\clearbooks-rest.pubxml" />
     <None Include="Service References\ClearBooksService\configuration91.svcinfo" />
     <None Include="Service References\ClearBooksService\configuration.svcinfo" />

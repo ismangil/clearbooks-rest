@@ -28,11 +28,19 @@ namespace clearbooks_rest.Controllers
     /// </summary>
     public class EntityController : ApiController
     {
+        /// <summary>
+        /// Instantiate ClearBooks service client
+        /// </summary>
+        /// <returns>Instance of ClearBooks service client</returns>
         private static ClearBooksService.AccountingPortClient NewClearBooksClient()
         {
             return new ClearBooksService.AccountingPortClient();
         }
 
+        /// <summary>
+        /// Retrieves apiKey from request header
+        /// </summary>
+        /// <returns>API Key</returns>
         private string GetAPIKeyHeader()
         {
             var headers = this.Request.Headers;
@@ -56,13 +64,13 @@ namespace clearbooks_rest.Controllers
         }
         */
 
-        // GET: api/Entity/5
+        // GET: api/getEntity/5
         /// <summary>
         /// Retrieve customer or supplier using ID
         /// </summary>
         /// <param name="id">Customer or supplied ID</param>
-        /// <param name="apiKey"></param>
         /// <returns></returns>
+        [Route("api/getEntity")]
         public ClearBooksService.Entity Get(int id)
         {
             using (var cb = NewClearBooksClient())
@@ -98,8 +106,8 @@ namespace clearbooks_rest.Controllers
         /// Insert new customer or supplier
         /// </summary>
         /// <param name="entity"></param>
-        /// <param name="apiKey"></param>
         /// <returns>entity ID</returns>
+        [Route("api/createEntity")]
         public int  Post([FromBody]ClearBooksService.Entity entity)
         {
             using (var cb = NewClearBooksClient())
@@ -112,6 +120,7 @@ namespace clearbooks_rest.Controllers
             }
         }
 
+        /*
         // PUT: api/Entity/5
         public void Put(int id, [FromBody]string value)
         {
@@ -121,5 +130,6 @@ namespace clearbooks_rest.Controllers
         public void Delete(int id)
         {
         }
+        */
     }
 }

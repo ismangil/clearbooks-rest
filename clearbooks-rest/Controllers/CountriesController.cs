@@ -7,16 +7,15 @@ using System.Web.Http;
 
 namespace clearbooks_rest.Controllers
 {
-    public class CountryCodeController : ApiController
+    public class CountriesController : ApiController
     {
-
-        // GET: api/CountryCode/5
         /// <summary>
-        /// Given the country name returns two letter code
+        /// Retrieves two-letter country code
         /// </summary>
-        /// <param name="countryName"></param>
-        /// <returns>Two letter country code</returns>
-        public string Get(string countryName)
+        /// <param name="countryName">Full country name</param>
+        /// <returns>Two-letter country code</returns>
+        [Route("api/GetCountryCode")]
+        public string GetCountryCode(string countryName)
         {
             var countries = new Bia.Countries.Iso3166Countries(StringComparer.OrdinalIgnoreCase);
 

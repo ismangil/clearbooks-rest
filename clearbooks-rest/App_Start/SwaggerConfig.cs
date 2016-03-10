@@ -6,6 +6,8 @@ using Swashbuckle.Application;
 using Swashbuckle.Swagger;
 using WebActivatorEx;
 using clearbooks_rest;
+using System;
+using System.Collections.Generic;
 
 [assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
 
@@ -150,6 +152,9 @@ namespace clearbooks_rest
                         //
                         c.OperationFilter<IncludeParameterNamesInOperationIdFilter>();
 
+                        // Add apiKey as header
+                        c.OperationFilter<AddRequiredHeader>();
+
                         // Post-modify the entire Swagger document by wiring up one or more Document filters.
                         // This gives full control to modify the final SwaggerDocument. You should have a good understanding of
                         // the Swagger 2.0 spec. - https://github.com/swagger-api/swagger-spec/blob/master/versions/2.0.md
@@ -220,6 +225,15 @@ namespace clearbooks_rest
                         //
                         //c.EnableOAuth2Support("test-client-id", "test-realm", "Swagger UI");
                     });
+        }
+    }
+
+    internal class AddRequiredHeader : IOperationFilter
+    {
+        public void Apply(Operation operation, SchemaRegistry schemaRegistry, ApiDescription apiDescription)
+        {
+            if (operation.parameters == null) { operation.parameters = new List<Parameter>(); }
+            operation.parameters.Add(new Parameter { name = "apiKey", @in= "header", type = "string", required = true});
         }
     }
 

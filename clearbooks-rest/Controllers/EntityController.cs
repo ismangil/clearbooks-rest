@@ -33,11 +33,28 @@ namespace clearbooks_rest.Controllers
             return new ClearBooksService.AccountingPortClient();
         }
 
+        private string GetAPIKeyHeader()
+        {
+            var headers = this.Request.Headers;
+
+            //System.Diagnostics.Trace.TraceInformation("Headers: {0}", headers);
+
+            IEnumerable<string> headerValues;
+
+            headers.TryGetValues("apiKey", out headerValues);
+
+            // System.Diagnostics.Trace.TraceInformation("Header values: {0}", headerValues);
+
+            return headerValues.FirstOrDefault();
+        }
+
+        /*
         // GET: api/Entity
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
         }
+        */
 
         // GET: api/Entity/5
         /// <summary>
@@ -46,12 +63,17 @@ namespace clearbooks_rest.Controllers
         /// <param name="id">Customer or supplied ID</param>
         /// <param name="apiKey"></param>
         /// <returns></returns>
-        public ClearBooksService.Entity Get(int id, string apiKey)
+        public ClearBooksService.Entity Get(int id)
         {
             using (var cb = NewClearBooksClient())
             {
+
+
+  
+
+
                 var auth = new ClearBooksService.authenticate();
-                auth.apiKey = apiKey;
+                auth.apiKey = GetAPIKeyHeader();
                 var eq = new ClearBooksService.EntityQuery();
                 eq.id = new int[1];
                 eq.id[0] = id;
@@ -78,12 +100,13 @@ namespace clearbooks_rest.Controllers
         /// <param name="entity"></param>
         /// <param name="apiKey"></param>
         /// <returns>entity ID</returns>
-        public int  Post([FromBody]ClearBooksService.Entity entity, string apiKey)
+        public int  Post([FromBody]ClearBooksService.Entity entity)
         {
             using (var cb = NewClearBooksClient())
             {
+
                 var auth = new ClearBooksService.authenticate();
-                auth.apiKey = apiKey;
+                auth.apiKey = GetAPIKeyHeader();
 
                 return cb.createEntity(auth, entity);
             }

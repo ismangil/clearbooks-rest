@@ -352,10 +352,20 @@ namespace clearbooks_rest.ClearBooksService {
         [System.ServiceModel.OperationContractAttribute(Action="https://secure.clearbooks.co.uk/api/accounting/soap/?consumer=WS-I-1.1#writeOffPa" +
             "rtial", ReplyAction="*")]
         System.Threading.Tasks.Task<clearbooks_rest.ClearBooksService.writeOffPartialResponse> writeOffPartialAsync(clearbooks_rest.ClearBooksService.writeOffPartialRequest request);
+        
+        // CODEGEN: Generating message contract since message listPaymentMethodsRequest has headers
+        [System.ServiceModel.OperationContractAttribute(Action="https://secure.clearbooks.co.uk/api/accounting/soap/?consumer=WS-I-1.1#listPaymen" +
+            "tMethods", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        clearbooks_rest.ClearBooksService.listPaymentMethodsResponse listPaymentMethods(clearbooks_rest.ClearBooksService.listPaymentMethodsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="https://secure.clearbooks.co.uk/api/accounting/soap/?consumer=WS-I-1.1#listPaymen" +
+            "tMethods", ReplyAction="*")]
+        System.Threading.Tasks.Task<clearbooks_rest.ClearBooksService.listPaymentMethodsResponse> listPaymentMethodsAsync(clearbooks_rest.ClearBooksService.listPaymentMethodsRequest request);
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -387,7 +397,67 @@ namespace clearbooks_rest.ClearBooksService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="https://secure.clearbooks.co.uk/api/accounting/soap/?consumer=WS-I-1.1")]
+    public partial class PaymentMethod : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int idField;
+        
+        private string nameField;
+        
+        private bool isClosedField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+                this.RaisePropertyChanged("id");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+                this.RaisePropertyChanged("name");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public bool isClosed {
+            get {
+                return this.isClosedField;
+            }
+            set {
+                this.isClosedField = value;
+                this.RaisePropertyChanged("isClosed");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -461,7 +531,7 @@ namespace clearbooks_rest.ClearBooksService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -514,7 +584,7 @@ namespace clearbooks_rest.ClearBooksService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -602,7 +672,7 @@ namespace clearbooks_rest.ClearBooksService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -648,7 +718,7 @@ namespace clearbooks_rest.ClearBooksService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -694,7 +764,7 @@ namespace clearbooks_rest.ClearBooksService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -740,7 +810,7 @@ namespace clearbooks_rest.ClearBooksService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -786,7 +856,7 @@ namespace clearbooks_rest.ClearBooksService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -909,7 +979,7 @@ namespace clearbooks_rest.ClearBooksService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1017,7 +1087,7 @@ namespace clearbooks_rest.ClearBooksService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1091,7 +1161,7 @@ namespace clearbooks_rest.ClearBooksService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1249,7 +1319,7 @@ namespace clearbooks_rest.ClearBooksService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1296,7 +1366,7 @@ namespace clearbooks_rest.ClearBooksService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1314,6 +1384,10 @@ namespace clearbooks_rest.ClearBooksService {
         private bool show_salesField;
         
         private bool show_purchasesField;
+        
+        private string customAccountCodeField;
+        
+        private bool hiddenField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -1387,6 +1461,30 @@ namespace clearbooks_rest.ClearBooksService {
             }
         }
         
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string customAccountCode {
+            get {
+                return this.customAccountCodeField;
+            }
+            set {
+                this.customAccountCodeField = value;
+                this.RaisePropertyChanged("customAccountCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public bool hidden {
+            get {
+                return this.hiddenField;
+            }
+            set {
+                this.hiddenField = value;
+                this.RaisePropertyChanged("hidden");
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -1398,7 +1496,7 @@ namespace clearbooks_rest.ClearBooksService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1486,7 +1584,7 @@ namespace clearbooks_rest.ClearBooksService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1532,7 +1630,7 @@ namespace clearbooks_rest.ClearBooksService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1611,7 +1709,7 @@ namespace clearbooks_rest.ClearBooksService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1643,7 +1741,7 @@ namespace clearbooks_rest.ClearBooksService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1722,7 +1820,7 @@ namespace clearbooks_rest.ClearBooksService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1754,7 +1852,7 @@ namespace clearbooks_rest.ClearBooksService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1779,13 +1877,13 @@ namespace clearbooks_rest.ClearBooksService {
         
         private string bankAccountField;
         
-        private double fxRateField;
-        
         private int bsAccountField;
         
+        private double fxRateField;
+        
         public Payment() {
-            this.fxRateField = 0D;
             this.bsAccountField = 0;
+            this.fxRateField = 0D;
         }
         
         /// <remarks/>
@@ -1899,19 +1997,6 @@ namespace clearbooks_rest.ClearBooksService {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute(0D)]
-        public double fxRate {
-            get {
-                return this.fxRateField;
-            }
-            set {
-                this.fxRateField = value;
-                this.RaisePropertyChanged("fxRate");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(0)]
         public int bsAccount {
             get {
@@ -1920,6 +2005,19 @@ namespace clearbooks_rest.ClearBooksService {
             set {
                 this.bsAccountField = value;
                 this.RaisePropertyChanged("bsAccount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(0D)]
+        public double fxRate {
+            get {
+                return this.fxRateField;
+            }
+            set {
+                this.fxRateField = value;
+                this.RaisePropertyChanged("fxRate");
             }
         }
         
@@ -1934,7 +2032,7 @@ namespace clearbooks_rest.ClearBooksService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1985,7 +2083,7 @@ namespace clearbooks_rest.ClearBooksService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2017,7 +2115,7 @@ namespace clearbooks_rest.ClearBooksService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2063,7 +2161,7 @@ namespace clearbooks_rest.ClearBooksService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2159,7 +2257,7 @@ namespace clearbooks_rest.ClearBooksService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2233,7 +2331,7 @@ namespace clearbooks_rest.ClearBooksService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2372,7 +2470,7 @@ namespace clearbooks_rest.ClearBooksService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2400,6 +2498,10 @@ namespace clearbooks_rest.ClearBooksService {
         private System.DateTime dateDueField;
         
         private bool dateDueFieldSpecified;
+        
+        private System.DateTime dateModifiedField;
+        
+        private bool dateModifiedFieldSpecified;
         
         private System.DateTime dateAccrualField;
         
@@ -2437,6 +2539,8 @@ namespace clearbooks_rest.ClearBooksService {
         
         private double balanceField;
         
+        private double foreignCurrencyBalanceField;
+        
         public Invoice() {
             this.invoice_idField = 0;
             this.invoiceNumberField = 0;
@@ -2450,6 +2554,7 @@ namespace clearbooks_rest.ClearBooksService {
             this.vatField = 0D;
             this.paidField = 0D;
             this.balanceField = 0D;
+            this.foreignCurrencyBalanceField = 0D;
         }
         
         /// <remarks/>
@@ -2584,6 +2689,30 @@ namespace clearbooks_rest.ClearBooksService {
             set {
                 this.dateDueFieldSpecified = value;
                 this.RaisePropertyChanged("dateDueSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public System.DateTime dateModified {
+            get {
+                return this.dateModifiedField;
+            }
+            set {
+                this.dateModifiedField = value;
+                this.RaisePropertyChanged("dateModified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool dateModifiedSpecified {
+            get {
+                return this.dateModifiedFieldSpecified;
+            }
+            set {
+                this.dateModifiedFieldSpecified = value;
+                this.RaisePropertyChanged("dateModifiedSpecified");
             }
         }
         
@@ -2813,6 +2942,19 @@ namespace clearbooks_rest.ClearBooksService {
             }
         }
         
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(0D)]
+        public double foreignCurrencyBalance {
+            get {
+                return this.foreignCurrencyBalanceField;
+            }
+            set {
+                this.foreignCurrencyBalanceField = value;
+                this.RaisePropertyChanged("foreignCurrencyBalance");
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -2824,7 +2966,7 @@ namespace clearbooks_rest.ClearBooksService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2898,7 +3040,7 @@ namespace clearbooks_rest.ClearBooksService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2967,7 +3109,7 @@ namespace clearbooks_rest.ClearBooksService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3328,7 +3470,7 @@ namespace clearbooks_rest.ClearBooksService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3388,7 +3530,7 @@ namespace clearbooks_rest.ClearBooksService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3448,7 +3590,7 @@ namespace clearbooks_rest.ClearBooksService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3480,7 +3622,7 @@ namespace clearbooks_rest.ClearBooksService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3591,7 +3733,7 @@ namespace clearbooks_rest.ClearBooksService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3601,10 +3743,6 @@ namespace clearbooks_rest.ClearBooksService {
         private bool successField;
         
         private string msgField;
-        
-        public ResponseStatus() {
-            this.msgField = "Test";
-        }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -3620,7 +3758,6 @@ namespace clearbooks_rest.ClearBooksService {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute("Test")]
         public string msg {
             get {
                 return this.msgField;
@@ -3642,7 +3779,7 @@ namespace clearbooks_rest.ClearBooksService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5090,6 +5227,42 @@ namespace clearbooks_rest.ClearBooksService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listPaymentMethods", WrapperNamespace="https://secure.clearbooks.co.uk/api/accounting/soap/?consumer=WS-I-1.1", IsWrapped=true)]
+    public partial class listPaymentMethodsRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="https://secure.clearbooks.co.uk/api/accounting/soap/?consumer=WS-I-1.1")]
+        public clearbooks_rest.ClearBooksService.authenticate authenticate;
+        
+        public listPaymentMethodsRequest() {
+        }
+        
+        public listPaymentMethodsRequest(clearbooks_rest.ClearBooksService.authenticate authenticate) {
+            this.authenticate = authenticate;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listPaymentMethodsResponse", WrapperNamespace="https://secure.clearbooks.co.uk/api/accounting/soap/?consumer=WS-I-1.1", IsWrapped=true)]
+    public partial class listPaymentMethodsResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://secure.clearbooks.co.uk/api/accounting/soap/?consumer=WS-I-1.1", Order=0)]
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("item", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public clearbooks_rest.ClearBooksService.PaymentMethod[] listPaymentMethodsResult;
+        
+        public listPaymentMethodsResponse() {
+        }
+        
+        public listPaymentMethodsResponse(clearbooks_rest.ClearBooksService.PaymentMethod[] listPaymentMethodsResult) {
+            this.listPaymentMethodsResult = listPaymentMethodsResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface AccountingPortChannel : clearbooks_rest.ClearBooksService.AccountingPort, System.ServiceModel.IClientChannel {
     }
@@ -5972,6 +6145,29 @@ namespace clearbooks_rest.ClearBooksService {
             inValue.authenticate = authenticate;
             inValue.query = query;
             return ((clearbooks_rest.ClearBooksService.AccountingPort)(this)).writeOffPartialAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        clearbooks_rest.ClearBooksService.listPaymentMethodsResponse clearbooks_rest.ClearBooksService.AccountingPort.listPaymentMethods(clearbooks_rest.ClearBooksService.listPaymentMethodsRequest request) {
+            return base.Channel.listPaymentMethods(request);
+        }
+        
+        public clearbooks_rest.ClearBooksService.PaymentMethod[] listPaymentMethods(clearbooks_rest.ClearBooksService.authenticate authenticate) {
+            clearbooks_rest.ClearBooksService.listPaymentMethodsRequest inValue = new clearbooks_rest.ClearBooksService.listPaymentMethodsRequest();
+            inValue.authenticate = authenticate;
+            clearbooks_rest.ClearBooksService.listPaymentMethodsResponse retVal = ((clearbooks_rest.ClearBooksService.AccountingPort)(this)).listPaymentMethods(inValue);
+            return retVal.listPaymentMethodsResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<clearbooks_rest.ClearBooksService.listPaymentMethodsResponse> clearbooks_rest.ClearBooksService.AccountingPort.listPaymentMethodsAsync(clearbooks_rest.ClearBooksService.listPaymentMethodsRequest request) {
+            return base.Channel.listPaymentMethodsAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<clearbooks_rest.ClearBooksService.listPaymentMethodsResponse> listPaymentMethodsAsync(clearbooks_rest.ClearBooksService.authenticate authenticate) {
+            clearbooks_rest.ClearBooksService.listPaymentMethodsRequest inValue = new clearbooks_rest.ClearBooksService.listPaymentMethodsRequest();
+            inValue.authenticate = authenticate;
+            return ((clearbooks_rest.ClearBooksService.AccountingPort)(this)).listPaymentMethodsAsync(inValue);
         }
     }
 }

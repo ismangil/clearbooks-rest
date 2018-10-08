@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2016 Perry Ismangil
+﻿// Copyright (c) 2016-2018 Perry Ismangil
 // This file is part of clearbooks-rest project.
 //
 // clearbooks-rest project is free software: you can redistribute it and/or modify

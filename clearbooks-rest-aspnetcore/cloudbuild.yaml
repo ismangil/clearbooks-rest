@@ -5,4 +5,4 @@ steps:
   timeout: "10m"
 - name: "gcr.io/cloud-builders/gcloud"
   args: ["app", "deploy", "./bin/Release/netcoreapp2.1/publish/app.yaml"]
-  timeout: "1600s"
+  timeout: "10m"

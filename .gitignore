@@ -210,3 +210,5 @@ FakesAssemblies/
 GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
+clearbooks-rest-aspnetcore/.vscode/launch.json
+clearbooks-rest-aspnetcore/.vscode/tasks.json

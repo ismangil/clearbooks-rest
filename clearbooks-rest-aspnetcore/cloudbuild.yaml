@@ -4,5 +4,5 @@ steps:
   dir: 'clearbooks-rest-aspnetcore'
 
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['app','deploy']
-  dir: './bin/Release/netcoreapp2.1/publish'
+  args: ['app','deploy','./bin/Release/netcoreapp2.1/publish/app.yaml'
+  dir: 'clearbooks-rest-aspnetcore'
